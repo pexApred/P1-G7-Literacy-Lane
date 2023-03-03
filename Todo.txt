@@ -1,0 +1,15 @@
+Title | Nav Bar | ...
+
+Literacy Lounge --> How to read guide (10 Reading Tips) (Reading Strategies) | Dictionary - phonetic pronunciation | ETC
+--> Choose Reading Level | Beginner (simple words) - Intermediate (phrases) - Advanced (Full sentences)
+--> Use dicionary API ( https://dictionaryapi.dev/ ) to select words
+--> Use Open Library API( https://openlibrary.org/dev/docs/api/subjects )to search for books that match your chosen reading level
+
+Build a reading Interface: Allows users to search for books and read them online. (based on reading level)
+
+Polish the design: Make it pretty
+
+EXTRA:
+Add interactive features: More engaging: quizzes | games --> to test user's reading comprehension. 
+Provide resources for improving reading skills, such as tips for decoding unfamiliar words or strategies for summarizing text
+Use JS to add animations or other interactive elemnts: More fun to use
