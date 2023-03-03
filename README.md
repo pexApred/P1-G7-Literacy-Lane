@@ -1,7 +1,7 @@
 # P1-G7-Literacy-Lane
 A one-stop shop for literacy education.
 
-Coding Acceptance Criteria:
+## Coding Acceptance Criteria:
 
 It is done when Ive used at least two server-side APIs.
 It is done when I’ve used a CSS framework other than Bootstrap.
@@ -14,7 +14,8 @@ It is done when the app is interactive (i.e:accept and respond to user input)
 
 
 
-Presentation Acceptance Criteria:
+## Presentation Acceptance Criteria:
+
 It is done when I’ve given a one minute description of application.
 It is done when a presentation includes a user story and motivation for development.
 It is done when we explain the process of technologies used, how the tasks and roles were. broken down and assigned, what challenges we encountered, and what were out successes.
