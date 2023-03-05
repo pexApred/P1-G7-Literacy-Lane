@@ -14,3 +14,4 @@ Add interactive features: More engaging: quizzes | games --> to test user's read
 Provide resources for improving reading skills, such as tips for decoding unfamiliar words or strategies for summarizing text
 Use JS to add animations or other interactive elemnts: More fun to use
 urban dictionary --> Search for definitions & phrases|sentences
+
