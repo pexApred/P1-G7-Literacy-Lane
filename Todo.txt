@@ -15,3 +15,29 @@ Provide resources for improving reading skills, such as tips for decoding unfami
 Use JS to add animations or other interactive elemnts: More fun to use
 urban dictionary --> Search for definitions & phrases|sentences
 
+Tasks
+Create HTML Homepage
+Nav bar (About, Resources, Start Learning) be able to scroll to section on page or new HTML page
+ABOUT - instructions on how to navigate website (Modal when first entering site) 
+Text & id anchor
+RESOURCES - 10 Reading Tips | Reading Strategies
+Text
+START LEARNING - 
+Beginner | 
+Fetch function for data from dictionary API - Random Word
+Button click functions
+Local Storage set and get
+Show on page
+Intermediate | 
+Fetch function for data from dictionary API - Random Phrases
+Button click functions
+Local Storage set and get
+Show on page
+Advanced |
+Fetch data from openLibrary 
+Want to be able to display book to read
+Show on page
+Make button to fetch
+CSS - make it pretty
+Media-Queries (Screen sizes)
+
