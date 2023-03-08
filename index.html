@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link ref="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Document</title>
 </head>
+
 <body>
-  <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation" >
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="./assets/literacylanelogo.jpg" width="250" height="140">
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
+  <div id="navbarParent">
+    <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <a class="navbar-item">
-          About
-        </a>
-  
-        <a class="navbar-item">
-          Start Learning
-        </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            Resources
-          </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Resource 1
-            </a>
-            <a class="navbar-item">
-              Resource 2
-            </a>
-            <a class="navbar-item">
-              Resource 3
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Contact
-            </a>
+          <img src="./assets/literacylanelogo.jpg" width="250" height="165">
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a id="about" class="navbar-item">
+                About
+              </a>
+
+              <a id="resources" class="navbar-item">
+                Resources
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a id="startLearn" class="navbar-item">
+                  Start Learning
+                </a>
+                <div class="navbar-dropdown">
+                  <a id="levelOne" class="level">
+                    Level 1: Word Comprehension
+                    <hr class="navbar-divider">
+                    <a id="levelTwo" class="level">
+                      Level 2: Practice Examples
+                    </a>
+                </div>
+
+              </div>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
-    </div>
-  </nav>
+
+
+    </nav>
+  </div>
 </body>
+
 </html>
