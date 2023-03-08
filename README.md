@@ -22,3 +22,4 @@ It is done when we explain the process of technologies used, how the tasks and r
 It is done when we present our application.
 It is done when we explain our direction for future development.
 It is done when we share links to the deployed application and the GitHug repository.
+
