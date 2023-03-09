@@ -1,5 +1,4 @@
 
-
 var addWords = function() {
     console.log("addWords");
     var word = $("#new-word").val();

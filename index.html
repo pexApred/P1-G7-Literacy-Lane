@@ -8,115 +8,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Literacy Lane: Journey to Reading Proficiency</title>
     <link ref="stylesheet" href="./assets/css/style.css"/>
-</head>
-
-<body>
-
-
-  <div id="navbarParent">
-    <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item">
-          <img src="./assets/literacylanelogo.jpg" width="250" height="165">
-          <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-              <a id="about" class="navbar-item">
-                About
-              </a>
-
-              <a id="resources" class="navbar-item">
-                Resources
-              </a>
-
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a id="startLearn" class="navbar-item">
-                  Start Learning
-                </a>
-
-                <div class="navbar-dropdown">
-                  <a id="levelOne" class="level">
-                    Level 1: Word Comprehension
-                    <hr class="navbar-divider">
-                    <a id="levelTwo" class="level">
-                      Level 2: Practice Examples
-                    </a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-
-    </nav>
-  </div>
-
-
-<head> 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Literacy Lane: Journey to Reading Proficiency</title>
- <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="/assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
   <body>
-    <!--Evan: Site Header-->
+    <!--Header-->
       <header>
         <h1><strong>Literacy Lane</strong></h1>  
-          </header>
-<!--Add Navbar here-->
+          
+<!--Navbar here-->
+<div id="navbarParent">
+  <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="./assets/Images/literacylanelogo.jpg" width="250" height="165">
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a id="about" class="navbar-item">
+              About
+            </a>
 
-              
-            
-              <section>
-                <div class="row">
-                  <div class="column">
-                  <h2>Do you have a struggling Reader? You've come to the right place.</h2>
-                  <!--Jazzy: Image with alt attribute for acccessibility-->
-                  <img src="https://about.uniteforliteracy.com/wp-content/uploads/2019/05/Dys-1.jpg" alt="student reading" style="width: 100%;">
+            <a id="resources" class="navbar-item">
+              Resources
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a id="startLearn" class="navbar-item">
+                Start Learning
+              </a>
+
+              <div class="navbar-dropdown">
+                <a id="levelOne" class="level">
+                  Level 1: Word Comprehension
+                  <hr class="navbar-divider">
+                  <a id="levelTwo" class="level">
+                    Level 2: Practice Examples
+                  </a>
               </div>
-              </section>
-          
-              <section>
-                <div class="column">
-                  <h2>Here at Literacy Lane we provide free books and activities for students.</h2>
-                  <!--Jazzy: Image with alt attribute for accessibility-->
-                  <img src="https://www.readandspell.com/sites/default/files//blog/ReadingAidsForKidsNew.jpg" alt="student reading" style="width:100%">
-                </div>
-              </section>
-          
-              <section>
-                <div class="column">
-                  <h2>Click on Start Learning to begin your reading journey!</h2>
-                  <!--Jazzy: Image with alt attribute for accessibility-->
-                  <img src="https://homeschoolsuperfreak.com/wp-content/uploads/2017/01/Struggling-Reader-Issues.jpeg" alt="student reading" style="width:100%">
-                </div>
-              </section>
-              </main>
+
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
 
 
-        <form id="new-word-search">
-            <input type="text" id="new-word" placeholder="dog"/>
-            <input type="button" id="new-word-search-button" value="search"/>
+  </nav>
+</div>
+</header>
 
-        </form>
+            <section>
+                <form id="new-word-search">
+                  <input type="text" id="new-word" placeholder="dog"/>
+                  <input type="button" id="new-word-search-button" value="search"/>
+                </form>
+            </section>
 
+            
+              
+                <section class="row">
+                  <div class="column" style="display: flex;max-width: 1200px;width: 100%; flex-wrap: wrap;">
+                  <!--Image with alt attribute for acccessibility-->
+                  <img src="./assets/Images/strugglingreader1.jpg" alt="struggling reader 1" style="width:300px";height:200px>
+                  </section>
+            
+                <section class="column" style="display: flex;max-width: 1200px;width: 100%; flex-wrap: wrap;">
+                    <!--Image with alt attribute for accessibility-->
+                  <img src="./assets/Images/strugglingreader2.jpg" alt="struggling reader 2" style="width:300px";height:200px>
+                </section>
+           
+                <section class="column" style="display: flex;max-width: 1200px;width: 100%; flex-wrap: wrap;">
+                  <!-- Image with alt attribute for accessibility-->
+                  <img src="./assets/Images/strugglingreader3.jpeg" alt="struggling reader 3" style="width:300px";height:200px>
+                </section>
+           
 
-                <!--Jazzy: Added footer here-->
-    <section>
-      <div class="footer">
+                <!---- footer here-->
         
           <p>
               &copy; 2023 Literacy Lane, Inc.
           </p>
       </div>
-      </section>
-      
-    
-      <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    </section>
 
 
 </body>

@@ -1,4 +1,3 @@
-
 #navbarParent {
     background-color:yellow;
   }
@@ -23,22 +22,15 @@
     #navBar{float: inline-start};
   }
 
-* {
-    box-sizing: border-box;
-    background-color: green;
-  }
   
   .column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-    height: 100%;
-  }
-  
-  /* Clearfix (clear floats) */
-  .row::after {
-    content: "";
-    clear: both;
-    display: inline-block;
-  }
+    display: flex;
+    max-width:1200px;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: center;
 
+  }
+ 
+
+  
