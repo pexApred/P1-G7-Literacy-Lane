@@ -1,8 +1,17 @@
+#logo{
+  position: absolute; 
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+}
 
 #navbarParent {
     background-color:yellow;
   }
-  
+
   #navBar {
     width: 40%;
     margin: 0 auto;
@@ -13,7 +22,7 @@
     height: 75px;
     background-color:yellow;
   }
-  
+
   .navbar-item {
     color: orange;
     display: inline-block;
@@ -28,3 +37,4 @@
  
 
   
+
