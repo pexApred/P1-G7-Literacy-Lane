@@ -14,7 +14,7 @@ var addWords = function() {
         });
 
 }
-
+// Random Word generator API from API Ninjas
 var addRandomWords = function() {
     console.log("add random words")
     var randomWord =$("#random-word-search-button");
@@ -51,7 +51,7 @@ var initListeners = function(){
     $("#random-word-search-button").click(addRandomWords);
     $("#page").click(addPage);
 }
-// 
+// Running jQuery after page loads
 $(function() {
     console.log("init");
     initListeners();
