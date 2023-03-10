@@ -12,6 +12,15 @@ var addWords = function() {
         })
         .then( function(data){
             console.log("fetched word", data);
+
+            var definition = data[0].meanings[0].definitions[0].definition;
+            var phoneticText = data[0].phonetics[0].text;
+            var phoneticAudio = data[0].phonetics[0].audio[1,2,3,4];
+            console.log(definition);
+            console.log(phoneticAudio);
+            
+            $("#generated-word").html("<h2>" + word + "</h2><p>" + phoneticText + phoneticAudio + "</p><p>" + definition + "<p>");
+
         });
 
 }
@@ -27,6 +36,7 @@ var addRandomWords = function() {
         contentType: 'application/json',
         success: function(result) {
             console.log(result);
+            $("#new-word").val(result.word);
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
@@ -57,7 +67,6 @@ $(function() {
     console.log("init");
     initListeners();
     addWords();
-    addRandomWords();
     addPage();
 });
 // Emmanuel
