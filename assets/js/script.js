@@ -1,4 +1,5 @@
 
+
 // Emmanuel
 // Dictionary API Fetch Function below
 
@@ -52,14 +53,16 @@ var addPage = function(){
     console.log("add page");
 }
 
-var initListeners = function(){
-    console.log("init listeners");
 
-    $("#new-word-search").submit(function(event){
-        event.preventDefault();
-        console.log("submitted form");
+// var initListeners = function(){
+//     console.log("init listeners");
 
-    });
+//     $("#new-word-search").submit(function(event){
+//         event.preventDefault();
+//         console.log("submitted form");
+
+//     });
+
 
     $("#new-word-search-button").click(addWords);
 
@@ -72,6 +75,7 @@ $(function() {
     console.log("init");
     initListeners();
     addWords();
+
 
     addPage();
 });
