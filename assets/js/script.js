@@ -1,5 +1,3 @@
-
-
 // Emmanuel
 // Dictionary API Fetch Function below
 
