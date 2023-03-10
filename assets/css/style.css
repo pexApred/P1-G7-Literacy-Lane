@@ -1,0 +1,30 @@
+
+#navbarParent {
+    background-color:yellow;
+  }
+  
+  #navBar {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    background-color:yellow;
+  }
+  
+  .navbar-item {
+    color: orange;
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 768px) {
+    #navBar{float: inline-start};
+  }
+
+
+  
+ 
+
+  
