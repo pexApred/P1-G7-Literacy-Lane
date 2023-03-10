@@ -1,5 +1,7 @@
+
 // Emmanuel
 // Dictionary API Fetch Function below
+
 var addWords = function() {
     console.log("addWords");
     var word = $("#new-word").val();
@@ -12,6 +14,7 @@ var addWords = function() {
         })
         .then( function(data){
             console.log("fetched word", data);
+
 
             var definition = data[0].meanings[0].definitions[0].definition;
             var phoneticText = data[0].phonetics[0].text;
@@ -59,14 +62,18 @@ var initListeners = function(){
     });
 
     $("#new-word-search-button").click(addWords);
+
     $("#random-word-search-button").click(addRandomWords);
     $("#page").click(addPage);
 }
 // Running jQuery after page loads
+
 $(function() {
     console.log("init");
     initListeners();
     addWords();
+
     addPage();
 });
 // Emmanuel
+
