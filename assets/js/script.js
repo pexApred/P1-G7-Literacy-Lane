@@ -66,7 +66,7 @@ var initListeners = function(){
 
     $("#random-word-search-button").click(addRandomWords);
     $("#page").click(addPage);
-}
+
 // Running jQuery after page loads
 
 $(function() {
