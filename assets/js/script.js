@@ -24,12 +24,16 @@ var addWords = function() {
             console.log(definition);
             console.log(phoneticAudio);
             
-            var audioEl = document.createElement("audio");
-            audioEl.src = phoneticAudio;
-            audioEl.controls = true;
+            if(partOfSpeech && definition && phoneticText && phoneticAudio) {
+                var audioEl = document.createElement("audio");
+                audioEl.src = phoneticAudio;
+                audioEl.controls = true;
 
-            $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
-            $("#generated-word").append(audioEl);
+                $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
+                $("#generated-word").append(audioEl);
+            } else {
+                addRandomWords();
+            }
         });
 
 }
@@ -49,7 +53,7 @@ var addRandomWords = function() {
             var wordUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + result.word;
             fetch(wordUrl)
                 .then(function(response){
-                    if (response.ok) {
+                    if (response.ok) {                   
                         $("#new-word").val(result.word); 
                         addWords();
                     } else {
@@ -62,6 +66,7 @@ var addRandomWords = function() {
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
+            addRandomWords();
         }
     });
 
@@ -80,6 +85,11 @@ var initListeners = function(){
         console.log("submitted form");
 
     });
+    $("#new-word").on("keypress", function(event) {
+        if (event.which === 13) {
+            addWords();
+        }
+    })
     $("#new-word-search-button").click(addWords);
     $("#random-word-search-button").click(addRandomWords);
     $("#page").click(addPage);
