@@ -13,20 +13,22 @@ var addWords = function() {
         .then( function(data){
             console.log("fetched word", data);
 
-
+            var partOfSpeech = data[0].meanings[0].partOfSpeech;
             var definition = data[0].meanings[0].definitions[0].definition;
-            var phoneticText = data[0].phonetics[0].text;
-            var phoneticAudio = data[0].phonetics.map(function(phonetics) {
-                return phonetics.audio;
-            });
+            var phoneticText = data[0].phonetics.find(function(phonetics) {
+                return phonetics.text;
+            }).text;
+            var phoneticAudio = data[0].phonetics.find(function(phonetics) {
+                return /mp3$/.test(phonetics.audio);
+            }).audio;
             console.log(definition);
             console.log(phoneticAudio);
             
             var audioEl = document.createElement("audio");
-            audioEl.src = phoneticAudio[0];
+            audioEl.src = phoneticAudio;
             audioEl.controls = true;
 
-            $("#generated-word").html("<h2>" + word + "</h2><p>" + phoneticText + "</p><p>" + definition + "<p>");
+            $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
             $("#generated-word").append(audioEl);
         });
 
