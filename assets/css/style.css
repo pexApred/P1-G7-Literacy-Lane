@@ -61,18 +61,30 @@
   height: 80px;
   margin-left: 6%;
 }*/
+#mainBackground {
+  display: flex;
+}
 
+#img1 {
+  height: 36vh;
+  width: 100%;
+}
 
 #image1,
 #image2,
 #image3 {
   height: auto;
   max-width: 100%;
-  display: table-cell;
-  margin: auto;
+  /* display: table-cell; */
   border: 20px dashed rgb(255, 145, 0);
   border-radius: 20px;
 
+}
+
+#content-1,
+#content-2,
+#content-3 {
+  height: 108px;
 }
 
 
