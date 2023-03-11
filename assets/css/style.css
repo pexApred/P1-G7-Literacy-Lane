@@ -1,3 +1,7 @@
+#mb {
+  background-color: rgb(0, 217, 255);
+}
+
 #logo {
   position: absolute;
   margin-top: 0.3%;
@@ -94,4 +98,5 @@
   font-family: cursive;
   font-weight: 500;
   background-color: rgb(235, 253, 18);
+  text-align: center;
 }
