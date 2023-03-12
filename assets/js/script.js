@@ -1,18 +1,22 @@
 // Emmanuel
-// Dictionary API Fetch Function below
+// Spinner variable deined using jQuery to select element with class
 const spinner = $(".giphy-embed");
 
-var word = $("#new-word").val() || "Literacy";
+// Defined the initial word to search for as "Literacy" to avoid error on load, until a new input 
+var word = $("#new-word") || "Literacy";
 // Using dictionaryAPI to get information of words from input field
 const addWords = function() {
     console.log("addWords");
+    // Hides the previous search results and shows spinner
     $("#generated-sentence").html("");
     $("#generated-word").hide();
     spinner.show();
 
+    // Updated the word variable to be the input in text field or stay as literacy
     word = $("#new-word").val() || "Literacy";
+    // URL construct for dictionary API
     var wordUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word;
-
+    // Fetch data from the API
     fetch(wordUrl)
         .then( function(response) {
             if (!response.ok) {
@@ -24,15 +28,16 @@ const addWords = function() {
             console.log("fetched word", data);
             spinner.hide();
 
+            // Extract relevant information from the API
             var partOfSpeech = data[0].meanings[0].partOfSpeech;
             var definition = data[0].meanings[0].definitions[0].definition;
-            var phoneticText = data[0].phonetics.find(function(phonetics) {
+            var phoneticText = data[0].phonetics.filter(function(phonetics) {
                 return phonetics.text;
-            }).text;
-            var phoneticAudio = data[0].phonetics.find(function(phonetics) {
+            })[0].text;
+            var phoneticAudio = data[0].phonetics.filter(function(phonetics) {
                 return /mp3$/.test(phonetics.audio);
-            }).audio;
-            
+            })[0].audio;
+            // If all necessary information is available, display it in the generated-word div
             if(word && partOfSpeech && definition && phoneticText && phoneticAudio) {
                 var audioEl = document.createElement("audio");
                 audioEl.src = phoneticAudio;
@@ -41,14 +46,17 @@ const addWords = function() {
                 $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
                 $("#generated-word").append(audioEl);
 
+                // Hide the spinner & show the generated-word div
                 spinner.hide();
                 $("#generated-word").show();
 
             } else {
+                // If any necessary info is missing, generate a random word instead
                 addRandomWords();
             }
         })
         .catch(function(error){
+            // if there is an error with the API call, display an error message and show the generated-word div
             console.error('Error:', error);
             spinner.hide();
             $("#generated-word").html("<p>Information not available. Please try again.</p>");
@@ -60,9 +68,9 @@ const addWords = function() {
 // Generating a Random Word using API Ninjas random word generator
 const addRandomWords = function() {
     console.log("add random words")
-
+    // Show the spinner
     spinner.show();
-   
+    // Make a request to the API to get random word
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/randomword?maxLength=5',
@@ -70,18 +78,20 @@ const addRandomWords = function() {
         contentType: 'application/json',
         success: function(result) {
             console.log(result);
-
+            // API endpoint for retrieving the dictionary info of the random word
             var wordUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + result.word;
             fetch(wordUrl)
+                // Throw error if unsuccessful
                 .then(function(response){
                     if (!response.ok) {
                         throw new Error(response.status);
                     }
-                    
+                    // If successful, add a random word to input field and generate words using it
                     if (response.ok) {                   
                         $("#new-word").val(result.word); 
                         addWords();
                     } else {
+                        // If response not successful, re-generate a word
                         addRandomWords();
                     }return response.json();
                 })
@@ -91,20 +101,22 @@ const addRandomWords = function() {
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
-
+            // Hide Spinner and display an error message
             spinner.hide();
             $("#generated-word").html("<p>Information not available. Please try again.</p>");
             $("#generated-word").show();
+            // Generate another random word
             addRandomWords();
         },
         complete: function() {
+            // Once request is completed, hide the spinner
             spinner.hide();
         }
         
     });
 
 };
-// Generating sentence using OpenAI API Q/A
+// Generating sentence using OpenAI API Q/A ---May come back to this later
 // const generateSentence = function() {
 //     console.log("Generating Sentence");
 
@@ -152,6 +164,7 @@ const addRandomWords = function() {
 //     });
 // };
 
+// Sets up listeners for various button clicks and form submissions
 var initListeners = function(){
     console.log("init listeners");
 
@@ -172,7 +185,6 @@ var initListeners = function(){
     // });
 }
 // Running jQuery after page loads
-
 $(function() {
     console.log("init");
     initListeners();
