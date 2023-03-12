@@ -1,10 +1,10 @@
 // Emmanuel
 // Dictionary API Fetch Function below
-var spinner = $(".giphy-embed");
+const spinner = $(".giphy-embed");
 
 var word = $("#new-word").val() || "Literacy";
 // Using dictionaryAPI to get information of words from input field
-var addWords = function() {
+const addWords = function() {
     console.log("addWords");
     $("#generated-sentence").html("");
     $("#generated-word").hide();
@@ -58,7 +58,7 @@ var addWords = function() {
 
 }
 // Generating a Random Word using API Ninjas random word generator
-var addRandomWords = function() {
+const addRandomWords = function() {
     console.log("add random words")
 
     spinner.show();
@@ -105,52 +105,52 @@ var addRandomWords = function() {
 
 };
 // Generating sentence using OpenAI API Q/A
-var generateSentence = function() {
-    console.log("Generating Sentence");
+// const generateSentence = function() {
+//     console.log("Generating Sentence");
 
-    spinner.show();
+//     spinner.show();
 
-    var apiUrl = "https://api.openai.com/v1/completions";
-    var apiKey = "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";
+//     var apiUrl = "https://api.openai.com/v1/completions";
+//     var apiKey = "";
   
-    var data = {
-      "model": "text-davinci-003",
-      "prompt": "\nQ: Can you write a sentence with the exact word," + word + ", and in a way a child learning how to read can understand.?\nA:",
-      "temperature": 0,
-      "max_tokens": 100,
-      "top_p": 1,
-      "frequency_penalty": 0.0,
-      "presence_penalty": 0.0,
-      "stop": ["\n"]
-    };
+//     var data = {
+//       "model": "text-davinci-003",
+//       "prompt": "\nQ: Can you write a sentence with the exact word," + word + ", and in a way a child learning how to read can understand.?\nA:",
+//       "temperature": 0,
+//       "max_tokens": 100,
+//       "top_p": 1,
+//       "frequency_penalty": 0.0,
+//       "presence_penalty": 0.0,
+//       "stop": ["\n"]
+//     };
 
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + apiKey,
-        },
-        body: JSON.stringify(data),
-    })
-    .then(function(response) {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        return response.json();
-    })
-    .then(function(data) {
-        console.log("Generated sentence:", data.choices[0].text);
-        spinner.hide();
-        var sentence = data.choices[0].text;
+//     fetch(apiUrl, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': 'Bearer ' + apiKey,
+//         },
+//         body: JSON.stringify(data),
+//     })
+//     .then(function(response) {
+//         if (!response.ok) {
+//           throw new Error(response.status);
+//         }
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         console.log("Generated sentence:", data.choices[0].text);
+//         spinner.hide();
+//         var sentence = data.choices[0].text;
         
-        $("#generated-sentence").html("<p>" + sentence + "</p>");
+//         $("#generated-sentence").html("<p>" + sentence + "</p>");
         
-    })
-    .catch(function(error) {
-        console.error('Error:', error);
-        spinner.hide();
-    });
-};
+//     })
+//     .catch(function(error) {
+//         console.error('Error:', error);
+//         spinner.hide();
+//     });
+// };
 
 var initListeners = function(){
     console.log("init listeners");
@@ -167,9 +167,9 @@ var initListeners = function(){
     })
     $("#new-word-search-button").click(addWords);
     $("#random-word-search-button").click(addRandomWords);
-    $("#generate-sentence-button").click(function() {
-        generateSentence();
-    });
+    // $("#generate-sentence-button").click(function() {
+    //     generateSentence();
+    // });
 }
 // Running jQuery after page loads
 
