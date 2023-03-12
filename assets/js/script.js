@@ -2,12 +2,15 @@
 // Dictionary API Fetch Function below
 var spinner = $(".giphy-embed");
 
+var word = $("#new-word").val() || "Literacy";
+
 var addWords = function() {
     console.log("addWords");
+    $("#generated-sentence").html("");
     $("#generated-word").hide();
     spinner.show();
 
-    var word = $("#new-word").val() || "Literacy";
+    word = $("#new-word").val() || "Literacy";
     var wordUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word;
 
     fetch(wordUrl)
@@ -40,6 +43,7 @@ var addWords = function() {
 
                 spinner.hide();
                 $("#generated-word").show();
+
             } else {
                 addRandomWords();
             }
@@ -103,6 +107,50 @@ var addRandomWords = function() {
     });
 
 };
+// testing sentence generator rapidAPI: Linguatools Sentence Generator
+var generateSentence = function() {
+    console.log("Generating Sentence");
+
+    var apiUrl = "https://api.openai.com/v1/completions";
+    var apiKey = "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";
+  
+    var data = {
+      "model": "text-davinci-003",
+      "prompt": "\nQ: Can you write a sentence with the exact word," + word + ", and in a way a child learning how to read can understand.?\nA:",
+      "temperature": 0,
+      "max_tokens": 100,
+      "top_p": 1,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "stop": ["\n"]
+    };
+
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + apiKey,
+        },
+        body: JSON.stringify(data),
+    })
+    .then(function(response) {
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
+        return response.json();
+    })
+    .then(function(data) {
+        console.log("Generated sentence:", data.choices[0].text);
+
+        var sentence = data.choices[0].text;
+        
+        $("#generated-sentence").html("<p>" + sentence + "</p>");
+        
+    })
+    .catch(function(error) {
+        console.error('Error:', error);
+    });
+};
 
 var addPage = function(){
     console.log("add page");
@@ -125,6 +173,9 @@ var initListeners = function(){
     $("#new-word-search-button").click(addWords);
     $("#random-word-search-button").click(addRandomWords);
     $("#page").click(addPage);
+    $("#generate-sentence-button").click(function() {
+        generateSentence();
+    });
 }
 // Running jQuery after page loads
 
