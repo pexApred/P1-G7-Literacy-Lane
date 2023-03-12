@@ -3,7 +3,7 @@
 var spinner = $(".giphy-embed");
 
 var word = $("#new-word").val() || "Literacy";
-
+// Using dictionaryAPI to get information of words from input field
 var addWords = function() {
     console.log("addWords");
     $("#generated-sentence").html("");
@@ -57,7 +57,7 @@ var addWords = function() {
         });
 
 }
-// Random Word generator API from API Ninjas
+// Generating a Random Word using API Ninjas random word generator
 var addRandomWords = function() {
     console.log("add random words")
 
@@ -85,9 +85,6 @@ var addRandomWords = function() {
                         addRandomWords();
                     }return response.json();
                 })
-                .then(function(data){
-                    console.log
-                })
                 .catch(function(error){
                     console.error('Error:', error);
                 });
@@ -107,12 +104,14 @@ var addRandomWords = function() {
     });
 
 };
-// testing sentence generator rapidAPI: Linguatools Sentence Generator
+// Generating sentence using OpenAI API Q/A
 var generateSentence = function() {
     console.log("Generating Sentence");
 
+    spinner.show();
+
     var apiUrl = "https://api.openai.com/v1/completions";
-    var apiKey = "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";
+    var apiKey = "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";
   
     var data = {
       "model": "text-davinci-003",
@@ -141,7 +140,7 @@ var generateSentence = function() {
     })
     .then(function(data) {
         console.log("Generated sentence:", data.choices[0].text);
-
+        spinner.hide();
         var sentence = data.choices[0].text;
         
         $("#generated-sentence").html("<p>" + sentence + "</p>");
@@ -149,13 +148,9 @@ var generateSentence = function() {
     })
     .catch(function(error) {
         console.error('Error:', error);
+        spinner.hide();
     });
 };
-
-var addPage = function(){
-    console.log("add page");
-}
-
 
 var initListeners = function(){
     console.log("init listeners");
@@ -172,7 +167,6 @@ var initListeners = function(){
     })
     $("#new-word-search-button").click(addWords);
     $("#random-word-search-button").click(addRandomWords);
-    $("#page").click(addPage);
     $("#generate-sentence-button").click(function() {
         generateSentence();
     });
@@ -183,7 +177,6 @@ $(function() {
     console.log("init");
     initListeners();
     addWords();
-    addPage();
 });
 // Emmanuel
 
