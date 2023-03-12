@@ -180,10 +180,12 @@ var initListeners = function(){
     })
     $("#new-word-search-button").click(addWords);
     $("#random-word-search-button").click(addRandomWords);
+
     // $("#generate-sentence-button").click(function() {
     //     generateSentence();
     // });
 }
+
 // Running jQuery after page loads
 $(function() {
     console.log("init");
