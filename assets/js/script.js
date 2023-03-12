@@ -4,6 +4,8 @@ const spinner = $(".giphy-embed");
 
 // Defined the initial word to search for as "Literacy" to avoid error on load, until a new input 
 var word = $("#new-word") || "Literacy";
+var genWordsArray = [];
+var ranWordsArray = []; 
 // Using dictionaryAPI to get information of words from input field
 const addWords = function() {
     console.log("addWords");
@@ -44,8 +46,11 @@ const addWords = function() {
                 audioEl.controls = true;
 
                 $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
+                 
+                genWordsArray.push(word);
+                localStorage.setItem('genWordsArray', JSON.stringify(genWordsArray));
                 $("#generated-word").append(audioEl);
-
+                
                 // Hide the spinner & show the generated-word div
                 spinner.hide();
                 $("#generated-word").show();
@@ -63,7 +68,7 @@ const addWords = function() {
             $("#generated-word").show();
         
         });
-
+       
 }
 // Generating a Random Word using API Ninjas random word generator
 const addRandomWords = function() {
@@ -89,6 +94,9 @@ const addRandomWords = function() {
                     // If successful, add a random word to input field and generate words using it
                     if (response.ok) {                   
                         $("#new-word").val(result.word); 
+                        
+                        ranWordsArray.push(result.word)
+                        localStorage.setItem('ranWordsArray', JSON.stringify(ranWordsArray));
                         addWords();
                     } else {
                         // If response not successful, re-generate a word
@@ -114,7 +122,7 @@ const addRandomWords = function() {
         }
         
     });
-
+    
 };
 // Generating sentence using OpenAI API Q/A ---May come back to this later
 // const generateSentence = function() {
@@ -191,6 +199,37 @@ $(function() {
     console.log("init");
     initListeners();
     addWords();
+    display();
 });
 // Emmanuel
 
+var  displayRanWords = function(){
+    var ranWords = JSON.parse(localStorage.getItem("ranWordsArray"));
+    console.log(ranWords);
+    var ul = document.createElement("ul");
+    for (var i=0; i<3; i++) {
+        var li = document.createElement("li");
+        li.textContent = ranWords[i];
+        ul.appendChild(li);
+    }
+    document.getElementById("ranWordsLocal").appendChild(ul);
+}
+
+
+var displayGenWords = function(){
+    var genWords = JSON.parse(localStorage.getItem("genWordsArray"));
+    console.log(genWords);
+    var ul = document.createElement("ul");
+    for (var i=0; i<3; i++) {
+        var li = document.createElement("li");
+        li.textContent = genWords[i];
+        ul.appendChild(li);
+    }
+    document.getElementById("genWordsLocal").appendChild(ul);
+}
+
+
+function display (){
+    displayRanWords();
+    displayGenWords();
+}
