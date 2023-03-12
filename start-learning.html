@@ -1,33 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" id="mb">
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Start Learning</title>
-
-
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="title-container">
           <h1><strong>Start Learning</strong></h1>
         </div>
-        </header>
+    </header> -->
 
+        <div id="navbarParent">
+          <img id="logo" src="./assets/images/literacylanelogo.jpg" width="250" height="165">
+      
+          <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+      
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                    <a id="about" class="navbar-item">
+                      About
+                    </a>
+      
+                    <a id="resources" class="navbar-item">
+                      Resources
+                    </a>
+      
+                    <div class="navbar-item has-dropdown is-hoverable">
+                      <a id="startLearn" class="navbar-item">
+                        Start Learning
+                      </a>
+                      <div class="navbar-dropdown">
+                        <a id="levelOne" class="level">
+                          Level 1: Word Comprehension
+                          <hr class="navbar-divider">
+                          <a id="levelTwo" class="level">
+                            Level 2: Practice Examples
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </nav>
+        </div>
 
-    <section>
+<!--Deion -->
+<!-- Nest Columns to format -->
+<div class="columns">
+  <div class="column">
+    <div class="column">
+      <div class="column">
+        <div class="column">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Main content -->
+  <main class="columns is-mobile is-centered" id="start-learning-main">
+    <section  class="column is-vcentered" class="">
       <h2>Type in a word or use the random word search to get information about that word.</h2>
-      <form id="new-word-search">
-        <input type="text" id="new-word" placeholder="dog"/>
-        <input type="button" id="new-word-search-button" value="Search"/>
-        <input type="button" id="random-word-search-button" value="Random Word Search"/>
+      <form id="new-word-search" class="column is-8">
+        <input class="column is-6" type="text" id="new-word" placeholder="dog"/>
+        <div class="column"></div>
+        <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search"/>
+        <input class="button is-hoverable"  type="button" id="random-word-search-button" value="Random Word Search"/>
       </form>
     </section>
 
-    <div id="generated-word"></div>
+    <div class="column">
+      <div id="generated-word" class= "box">  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor natus incidunt tenetur, fugit id quam voluptate inventore debitis rerum quasi adipisci facere laboriosam reprehenderit cum officiis. Rem voluptatibus odit sunt!</p>
+      </div>
+    </div>
+  </main>
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./assets/js/script.js"></script>
