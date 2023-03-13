@@ -1,3 +1,23 @@
+// Deion Modal Script
+function closeModal(modal) {
+    modal.classList.remove('is-active');
+  }
+ 
+  window.addEventListener('load', function() {
+    var modal = document.querySelector('.modal');
+    modal.classList.add('is-active');
+ 
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  });
+ 
+
+
+
 // Emmanuel
 // Spinner variable deined using jQuery to select element with class
 const spinner = $(".giphy-embed");

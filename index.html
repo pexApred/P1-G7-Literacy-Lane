@@ -110,20 +110,41 @@
   <br>
   <br>
   <br>
+ 
+
   <!-- In this section I've added a video for our modal, welcoming users to Literacy Lane -->
-  <section id="mp4" class="video-about">
-    <video controls width="550">
-      <source src="./assets/videos/literacyLane.mp4" type="video/WEBM">
+  <div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <div id="aboutMessage-container" class="about message">
+            <video controls width="250">
+              <source src="./assets/videos/literacyLane.mp4" type="video/WEBM">
+       
+              <source src="./assets/videos/literacyLane.mp4" type="video/mp4">
+       
+              Download the
+              <a href="./assets/videos/literacyLane.mp4">WEBM</a>
+              or
+              <a href="./assets/videos/literacyLane.mp4">MP4</a>
+              video.
+            </video>
+            <div class="message-body" id="content-4">
+              <article class="message is-info">
+                <ul>
+                  <li><strong>About Literacy Lane</strong></li>
+                  Literacy Lane is a simple learning site for anyone learning English. You will have access to resources guiding
+                  you through reading strategies and interactive learning with the ability to generate words with content. Click
+                  "Start Learning" to go down Literacy Lane and begin your education today!
+                </ul>
+            </div>
+            </article>
+          </div>
+        </div>
+    </div>
+ 
+    <button class="modal-close is-large" aria-label="close"></button>
 
-      <source src="./assets/videos/literacyLane.mp4" type="video/mp4">
-
-      Download the
-      <a href="./assets/videos/literacyLane.mp4">WEBM</a>
-      or
-      <a href="./assets/videos/literacyLane.mp4">MP4</a>
-      video.
-    </video>
-  </section>
 
   <div id="aboutMessage-container" class="about message"></div>
   <div class="message-body" id="content-4">
