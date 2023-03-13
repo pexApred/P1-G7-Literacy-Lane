@@ -1,8 +1,22 @@
-#mb {
-  background-color:lightblue;
+/* EL ADDED */
+:root{
+  --white:#fff;
+  --lightblue: rgb(0, 217, 255);
+  --blue: rgba(3, 68, 189, 0.6);
+  --yellow: rgb(235, 253, 18);
+  --orange:  rgb(255, 145, 0);
 }
 
-#logo {
+#mb {
+  background-color:var(--lightblue);
+}
+/* EL ADDED */
+
+/* #mb {
+  background-color:lightblue;
+} */
+
+/* #logo {
   position: absolute;
   margin-top: 0.3%;
   margin-left: 0.2%;
@@ -43,20 +57,94 @@
   justify-content: center;
   padding: 50px 50px;
   text-shadow: 4px 4px 4px rgba(3, 68, 189, 0.6);
-  
+} */
+
+/* EL ADDED */
+#logo {
+  /* position: fixed; */
+  margin-top: 2%;
+  margin-left: 2%;
+  text-align: center;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  /* height: 6.0%; */
+  border: 2px solid;
+  border-radius: 1em;
+  border-color: var(--blue);
+  box-shadow: 4px 4px var(--blue);
 
 }
 
-#mainBorder {
-  border-style: inset;
+#navbarParent {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--yellow);
+  border-color: var(--blue);
+  border-style:groove;
+  border-bottom: 5px solid var(--blue);
 }
 
+#navBar {
+  z-index: 1;
+  /* width: 100%; */
+  margin-right: 1%;
+  /* text-align: center; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  /* height: 75px; */
+  background-color: var(--yellow);
+}
 
-#mainBackground {
+.navbar-item {
+  margin: 0em 1em 0em 0em;
+  color: var(--blue);
+  display: block;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: xx-large;
+  /* justify-content: space-between; */
+  padding: 0px 25px;
+  border: 0.5px solid var(--blue);
+  border-radius: 1em;
+  box-shadow: 4px 4px var(--blue);
+}
+
+#about:hover,
+#startLearn:hover,
+#resources:hover {
+  color: var(--orange);
+  padding: 1px 25px;
+}
+/* EL ADDED */
+
+/* #mainBackground {
   background-color: rgb(0, 217, 255);
   display: flex;
-}
+} */
 
+/* EL ADDED */
+#mainBackground {
+  margin-top: 5%;
+  background-color: var(--lightblue);
+  display: flex;
+  flex-wrap: wrap;
+}
+/* EL ADDED */
+/* EL ADDED */
+#start-learning-main {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* EL ADDED */
 
 /*#messageHeader {
   background-color: rgb(0, 217, 255);
@@ -90,18 +178,26 @@
 
 }
 
+/* EL ADDED */
 #content-1,
 #content-2,
 #content-3 {
-  height: 103px;
+  font-size: large;
+  height: 120px;
+  overflow: auto;
 }
+/* EL ADDED */
 
+/* #content-1,
+#content-2,
+#content-3 {
+  height: 103px;
+} */
 
-
-#mp4 {
+/* #mp4 {
   display: flex;
   justify-content: center;
-}
+} */
 
 #catGif {
   display: flex;
@@ -135,3 +231,20 @@
   padding: 1rem;
   border: 20px dashed rgb(255, 145, 0);
 }
+
+/* EL ADDED */
+#video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  border-top: 10px solid var(--white);
+  border-bottom: 10px solid var(--white);
+  margin: 5em 0em 2em 0em;
+}
+
+#video-container video {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* EL ADDED */

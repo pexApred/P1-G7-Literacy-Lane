@@ -15,15 +15,14 @@ function closeModal(modal) {
     });
   });
  
-
-
-
-// Emmanuel
-// Spinner variable deined using jQuery to select element with class
+// Spinner variable defined using jQuery to select element with class
 const spinner = $(".giphy-embed");
 
 // Defined the initial word to search for as "Literacy" to avoid error on load, until a new input 
 var word = $("#new-word") || "Literacy";
+
+// Local Storage Edit
+var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 var genWordsArray = [];
 var ranWordsArray = []; 
 // Using dictionaryAPI to get information of words from input field
@@ -67,13 +66,27 @@ const addWords = function() {
 
                 $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
                  
-                genWordsArray.push(word);
-                var literacySplice = genWordsArray.indexOf("Literacy");
-                if(literacySplice !== -1){
-                    genWordsArray.splice(literacySplice, 1);
-                }
-                localStorage.setItem('genWordsArray', JSON.stringify(genWordsArray));
-                displayGenWords();
+                // // LS EDIT
+                searchHistory.unshift(word);
+                searchHistory = searchHistory.slice(0, 10);
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+                // // LS EDIT
+                var searchHistoryEl = document.querySelector("#search-history");
+                searchHistoryEl.innerHTML = "";
+                    for (var i=0; i< searchHistory.length; i++){
+                        var li = document.createElement("li");
+                        li.textContent = searchHistory[i];
+                        searchHistoryEl.appendChild(li);
+                    };
+                // LS EDIT
+                
+                // genWordsArray.push(word);
+                // var literacySplice = genWordsArray.indexOf("Literacy");
+                // if(literacySplice !== -1){
+                //     genWordsArray.splice(literacySplice, 1);
+                // }
+                // localStorage.setItem('genWordsArray', JSON.stringify(genWordsArray));
+                // displayGenWords();
                 $("#generated-word").append(audioEl);
                 
                 // Hide the spinner & show the generated-word div
@@ -119,11 +132,6 @@ const addRandomWords = function() {
                     // If successful, add a random word to input field and generate words using it
                     if (response.ok) {                   
                         $("#new-word").val(result.word); 
-                        
-                        ranWordsArray.push(result.word)
-                        localStorage.setItem('ranWordsArray', JSON.stringify(ranWordsArray));
-                        displayRanWords();
-                        addWords();
                     } else {
                         // If response not successful, re-generate a word
                         addRandomWords();
@@ -131,14 +139,15 @@ const addRandomWords = function() {
                 })
                 .catch(function(error){
                     console.error('Error:', error);
+                    $("#generated-word").html("<p>Information not available. Please try again.</p>");
+                    $("#generated-word").show();
                 });
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
             // Hide Spinner and display an error message
             spinner.hide();
-            $("#generated-word").html("<p>Information not available. Please try again.</p>");
-            $("#generated-word").show();
+            
             // Generate another random word
             addRandomWords();
         },
@@ -228,40 +237,41 @@ $(function() {
 });
 // Emmanuel
 
-var  displayRanWords = function(){
-    var ranWords = JSON.parse(localStorage.getItem("ranWordsArray"));
-    console.log(ranWords);
-    var ul = document.createElement("ul");
-    for (var i=0; i<5; i++) {
-        if(ranWords.length > 5){
-          ranWords.splice(0, ranWords.length -5);
-        }
-        var li = document.createElement("li");
-        li.textContent = ranWords[i];
-        ul.appendChild(li);
-    }
-    document.getElementById("ranWordsLocal").innerHTML = ""; 
-}
+// Commented out Excess search History 
+// var  displayRanWords = function(){
+//     var ranWords = JSON.parse(localStorage.getItem("ranWordsArray"));
+//     console.log(ranWords);
+//     var ul = document.createElement("ul");
+//     for (var i=0; i<5; i++) {
+//         if(ranWords.length > 5){
+//           ranWords.splice(0, ranWords.length -5);
+//         }
+//         var li = document.createElement("li");
+//         li.textContent = ranWords[i];
+//         ul.appendChild(li);
+//     }
+//     document.getElementById("ranWordsLocal").innerHTML = ""; 
+// }
 
 
-var displayGenWords = function(){
-    var genWords = JSON.parse(localStorage.getItem("genWordsArray"));
-    console.log(genWords);
-    var ul = document.createElement("ul");
-    for (var i=0; i<5; i++) {
+// var displayGenWords = function(){
+//     var genWords = JSON.parse(localStorage.getItem("genWordsArray"));
+//     console.log(genWords);
+//     var ul = document.createElement("ul");
+//     for (var i=0; i<5; i++) {
         
-        if(genWords.length > 5){
-            genWords.splice(0, genWords.length -5);
-        }
-        var li = document.createElement("li");
-        li.textContent = genWords[i];
-        ul.appendChild(li);
-    }
-    document.getElementById("genWordsLocal").innerHTML = ""; 
-    document.getElementById("genWordsLocal").appendChild(ul);
-}
+//         if(genWords.length > 5){
+//             genWords.splice(0, genWords.length -5);
+//         }
+//         var li = document.createElement("li");
+//         li.textContent = genWords[i];
+//         ul.appendChild(li);
+//     }
+//     document.getElementById("genWordsLocal").innerHTML = ""; 
+//     document.getElementById("genWordsLocal").appendChild(ul);
+// }
 
 
 
-    displayRanWords();
-    displayGenWords();
+//     displayRanWords();
+//     displayGenWords();
