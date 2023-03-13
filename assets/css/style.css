@@ -140,7 +140,7 @@
 /* EL ADDED */
 /* EL ADDED */
 #start-learning-main {
-  /* margin-top: 10%; */
+  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -233,18 +233,18 @@
 }
 
 /* EL ADDED */
-/* #video-container {
+#video-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: 35vh;
   border-top: 10px solid var(--white);
   border-bottom: 10px solid var(--white);
-  margin: 0em 0em 1em 0em;
+  margin: 5em 0em 2em 0em;
 }
 
-video {
+#video-container video {
   max-width: 90%;
   max-height: 90%;
-} */
+}
 /* EL ADDED */
