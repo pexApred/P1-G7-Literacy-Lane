@@ -96,12 +96,10 @@
   height: 103px;
 }
 
-
-
-#mp4 {
+/* #mp4 {
   display: flex;
   justify-content: center;
-}
+} */
 
 #catGif {
   display: flex;
