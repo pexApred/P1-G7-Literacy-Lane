@@ -68,7 +68,12 @@ const addWords = function() {
                 $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
                  
                 genWordsArray.push(word);
+                var literacySplice = genWordsArray.indexOf("Literacy");
+                if(literacySplice !== -1){
+                    genWordsArray.splice(literacySplice, 1);
+                }
                 localStorage.setItem('genWordsArray', JSON.stringify(genWordsArray));
+                displayGenWords();
                 $("#generated-word").append(audioEl);
                 
                 // Hide the spinner & show the generated-word div
@@ -117,6 +122,7 @@ const addRandomWords = function() {
                         
                         ranWordsArray.push(result.word)
                         localStorage.setItem('ranWordsArray', JSON.stringify(ranWordsArray));
+                        displayRanWords();
                         addWords();
                     } else {
                         // If response not successful, re-generate a word
@@ -219,7 +225,6 @@ $(function() {
     console.log("init");
     initListeners();
     addWords();
-    display();
 });
 // Emmanuel
 
@@ -227,12 +232,15 @@ var  displayRanWords = function(){
     var ranWords = JSON.parse(localStorage.getItem("ranWordsArray"));
     console.log(ranWords);
     var ul = document.createElement("ul");
-    for (var i=0; i<3; i++) {
+    for (var i=0; i<5; i++) {
+        if(ranWords.length > 5){
+          ranWords.splice(0, ranWords.length -5);
+        }
         var li = document.createElement("li");
         li.textContent = ranWords[i];
         ul.appendChild(li);
     }
-    document.getElementById("ranWordsLocal").appendChild(ul);
+    document.getElementById("ranWordsLocal").innerHTML = ""; 
 }
 
 
@@ -240,16 +248,20 @@ var displayGenWords = function(){
     var genWords = JSON.parse(localStorage.getItem("genWordsArray"));
     console.log(genWords);
     var ul = document.createElement("ul");
-    for (var i=0; i<3; i++) {
+    for (var i=0; i<5; i++) {
+        
+        if(genWords.length > 5){
+            genWords.splice(0, genWords.length -5);
+        }
         var li = document.createElement("li");
         li.textContent = genWords[i];
         ul.appendChild(li);
     }
+    document.getElementById("genWordsLocal").innerHTML = ""; 
     document.getElementById("genWordsLocal").appendChild(ul);
 }
 
 
-function display (){
+
     displayRanWords();
     displayGenWords();
-}
