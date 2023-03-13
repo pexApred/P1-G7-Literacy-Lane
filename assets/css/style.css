@@ -96,17 +96,30 @@
   height: 103px;
 }
 
-#content-4, #content-5 {
-  border: 10px dashed rgb(255, 145, 0);
-  font-size: larger;
-  font-family: cursive;
-  background-color: rgb(0, 217, 255);
 
+
+#mp4 {
+  display: flex;
+  justify-content: center;
 }
 
+#catGif {
+  display: flex;
+  justify-content: center;
+}
 
+#content-4, #content-5 {
+  border: 10px dashed rgb(255, 145, 0);
+  font-size: 100px;
+  font-family: cursive;
+  background-color: rgb(0, 217, 255);
+  text-align: center;
+  margin:100px;
+}
 
-
+#aboutMessage, #resourceMessage {
+  font-size: 2rem;
+}
 
 #footer {
   font-size: medium;
