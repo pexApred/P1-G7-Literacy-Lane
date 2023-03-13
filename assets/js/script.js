@@ -15,9 +15,6 @@ function closeModal(modal) {
     });
   });
  
-
-
-
 // Emmanuel
 // Spinner variable deined using jQuery to select element with class
 const spinner = $(".giphy-embed");
