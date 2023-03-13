@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" id="mb">
 
-
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +39,7 @@
                   Start Learning
                 </a>
                 <div class="navbar-dropdown">
-                  <a id="levelOne" class="level">
+                  <a id="levelOne" class="level" href="start-learning.html">
                     Level 1: Word Comprehension
                     <hr class="navbar-divider">
                     <a id="levelTwo" class="level">
@@ -113,8 +111,8 @@
   <br>
   <br>
   <!-- In this section I've added a video for our modal, welcoming users to Literacy Lane -->
-  <div id="aboutMessage-container" class="about message">
-    <video controls width="250">
+  <section id="mp4" class="video-about">
+    <video controls width="550">
       <source src="./assets/videos/literacyLane.mp4" type="video/WEBM">
 
       <source src="./assets/videos/literacyLane.mp4" type="video/mp4">
@@ -125,16 +123,19 @@
       <a href="./assets/videos/literacyLane.mp4">MP4</a>
       video.
     </video>
-    <div class="message-body" id="content-4">
-      <article class="message is-info">
-        <ul>
-          <li><strong>About Literacy Lane</strong></li>
-          Literacy Lane is a simple learning site for anyone learning English. You will have access to resources guiding
-          you through reading strategies and interactive learning with the ability to generate words with content. Click
-          "Start Learning" to go down Literacy Lane and begin your education today!
-        </ul>
-    </div>
-    </article>
+  </section>
+
+  <div id="aboutMessage-container" class="about message"></div>
+  <div class="message-body" id="content-4">
+    <article id="aboutMessage" class="message is-info">
+      <ul>
+        <li><strong>About Literacy Lane</strong></li>
+        Literacy Lane is a simple learning site for anyone learning English. You will have access to resources guiding
+        you through reading strategies and interactive learning with the ability to generate words with content. Click
+        "Start Learning" to go down Literacy Lane and begin your education today!
+      </ul>
+  </div>
+  </article>
 
   </div>
   </section>
@@ -158,16 +159,19 @@
   <br>
   <br>
   <br>
+  <section id="catGif" class="catGif">
+    <img src="./assets/images/catreading.gif" alt="cat gif">
+  </section>
 
   <div class="message-body" id="content-5">
-    <article id="resources-container" class="resources message">
+    <article id="resourceMessage" class="resources message">
       <ul>
         <h2><strong>Word Work Strategies</strong></h2>
         <li>1. Click on the Start Learning Tab.</li>
         <li>2. Tap out sounds for the given word.</li>
         <li>3. Use a timer to see how many words you can read per minute.</li>
         <li>4. Find books based on your interest by clicking <a
-            href="https://www.readingrockets.org/bookfinder">here</a></li>
+            href="https://www.readingrockets.org/bookfinder">here.</a></li>
         <li>5. Practice reading for 30 minutes daily!</li>
       </ul>
   </div>
