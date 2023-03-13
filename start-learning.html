@@ -1,102 +1,96 @@
 <!DOCTYPE html>
 <html lang="en" id="mb">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
-  <body>
-    <!-- <header>
-      <div class="title-container">
-        <h1><strong>Start Learning</strong></h1>
-      </div>
-    </header> -->
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <!-- <header class="header"> -->
     <div id="navbarParent">
-      <div href="./index.html">
-        <img id="logo" src="./assets/images/literacylanelogo.jpg" width="250" height="165">
-      </div>
+      <a href="./index.html"><img id="logo" src="./assets/images/literacylanelogo.jpg" width="250" height="165"></a>
       <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item">
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a id="about" class="navbar-item">
                   About
                 </a>
-          
+
                 <a id="resources" class="navbar-item">Resources</a>
-          
+
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <a id="startLearn" class="navbar-item">
-                    Start Learning
-                  </a>
+                  <a id="startLearn" class="navbar-item">Start Learning</a>
                   <div class="navbar-dropdown">
-                    <a id="levelOne" class="level">Level 1: Word Comprehension
-                      <hr class="navbar-divider">
-                      <a id="levelTwo" class="level"> 2: Practice Examples</a>
-                          </div>
-                        </div>
+                    <a id="levelOne" class="level">Level 1: Word Comprehension</a>
+                    <hr class="navbar-divider">
+                    <a id="levelTwo" class="level"> 2: Practice Examples</a>
                   </div>
+                </div>
+              </div>
             </div>
-          </a>
         </div>
       </nav>
     </div>
-
-    <!--Deion -->
-    <!-- Nested Columns to format -->
-    <div class="columns">
+  <!-- </header> -->
+  <!-- Deion  -->
+  <!-- Nested Columns to format -->
+  <!-- <div class="columns">
+    <div class="column">
       <div class="column">
         <div class="column">
           <div class="column">
-            <div class="column">          
-            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>  -->
 
-    <!-- Main content -->
-    <main class="columns is-mobile is-centered" id="start-learning-main">
-      <section  class="column is-vcentered" >
-        <h2>Type in a word or use the random word search to get information about that word.</h2>
+  <!-- Main content -->
+  <main class="columns is-mobile is-centered" id="start-learning-main">
+    <section class="column is-vcentered">
+      <h2>Type in a word or use the random word search to get information about that word.</h2>
 
-        <form id="new-word-search" class="column is-8">
-          <input class="column is-6" type="text" id="new-word" placeholder="Ex: Literacy"/>
-          <div class="column"></div>
-          <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search"/>
-          <input class="button is-hoverable"  type="button" id="random-word-search-button" value="Generate Random Word"/>
+      <form id="new-word-search" class="column is-8">
+        <input class="column is-6" type="text" id="new-word" placeholder="Ex: Literacy" />
+        <div class="column"></div>
+        <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search" />
+        <input class="button is-hoverable" type="button" id="random-word-search-button" value="Generate Random Word" />
 
-        </form>
+      </form>
 
-        <div id="spinner">
-          <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" style=display:none width="100" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40" alt="Loading spinner icon"></a></p>
-        </div>
-      </section>
-
-
-      <div class="column">
-        <div id="generated-word" class= "box">  
-          
-        </div>
-        <div>
-          <h3>Recently Searched Words</h3>
-          <ul id="search-history"></ul>
-          <div id="genWordsLocal"></div>
-          <div id="ranWordsLocal"></div>
-        </div>
+      <div id="spinner">
+        <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" style=display:none width="100" height="100"
+          frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p><a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40" alt="Loading spinner icon"></a></p>
       </div>
-    </main>
-
-    <!-- <button id="generate-sentence-button">Generate Sentence</button> -->
-    <!-- <div id="generated-sentence"></div> -->
+    </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <div class="column">
+      <div id="generated-word" class="box">
 
-  </body>
+      </div>
+      <div>
+        <h3>Recently Searched Words</h3>
+        <ul id="search-history"></ul>
+        <div id="genWordsLocal"></div>
+        <div id="ranWordsLocal"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- <button id="generate-sentence-button">Generate Sentence</button> -->
+  <!-- <div id="generated-sentence"></div> -->
+
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
 </html>
