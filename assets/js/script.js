@@ -228,6 +228,7 @@ $(function() {
 });
 // Emmanuel
 
+// Commented out Excess search History 
 var  displayRanWords = function(){
     var ranWords = JSON.parse(localStorage.getItem("ranWordsArray"));
     console.log(ranWords);
