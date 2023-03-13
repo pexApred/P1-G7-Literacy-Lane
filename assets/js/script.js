@@ -112,15 +112,6 @@ const addRandomWords = function() {
                     if (response.ok) {                   
                         $("#new-word").val(result.word); 
                         
-                        // LS EDIT
-                        searchHistory.unshift(result.word);
-                        searchHistory = searchHistory.slice(0,10);
-                        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-                        // LS EDIT
-                        
-                        // ranWordsArray.push(result.word)
-                        // localStorage.setItem('ranWordsArray', JSON.stringify(ranWordsArray));
-                        addWords();
                     } else {
                         // If response not successful, re-generate a word
                         addRandomWords();
@@ -128,14 +119,15 @@ const addRandomWords = function() {
                 })
                 .catch(function(error){
                     console.error('Error:', error);
+                    $("#generated-word").html("<p>Information not available. Please try again.</p>");
+                    $("#generated-word").show();
                 });
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
             // Hide Spinner and display an error message
             spinner.hide();
-            $("#generated-word").html("<p>Information not available. Please try again.</p>");
-            $("#generated-word").show();
+            
             // Generate another random word
             addRandomWords();
         },
@@ -216,14 +208,6 @@ var initListeners = function(){
     //     generateSentence();
     // });
 }
-
-// var searchHistoryEl = document.querySelector("#search-history");
-//     searchHistoryEl.innerHTML = "";
-//         for (var i=0; i< searchHistory.length; i++){
-//             var li = document.createElement("li");
-//             li.textContent = searchHistory[i];
-//             searchHistoryEl.appendChild(li);
-//         };
 
 // Running jQuery after page loads
 $(function() {
