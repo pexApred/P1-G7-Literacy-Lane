@@ -13,7 +13,7 @@ Our motivation was to create a “one stop shop” for users to overcome any kin
 
 ## Usage
 
-To use the program, open the page on the browser then you can read our about and resources sections, or click start learning to begin the actual excercises. 
+To use the program, open the page on the browser then you can read our about and resources sections, or click start learning to begin the actual excercises!
  
  ![About Page Screenshot](./assets/images/aboutScreenshot.png)
    
