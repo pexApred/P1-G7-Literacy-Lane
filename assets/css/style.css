@@ -154,6 +154,11 @@
   border: 20px dashed rgb(255, 145, 0);
 }
 
+#startLearningfooter {
+  border: none;
+  text-align: center;
+}
+
 #video-container {
   display: flex;
   justify-content: center;
