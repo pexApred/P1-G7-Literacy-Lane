@@ -14,12 +14,11 @@ Our motivation was to create a “one stop shop” for users to overcome any kin
 ## Usage
 
 To use the program, open the page on the browser then you can read our about and resources sections, or click start learning to begin the actual excercises. 
-    ```md
-    ![About Page Screenshot](./assets/images/aboutScreenshot.png?raw=true)
-    ```
-    ```md
-    ![Start Learning Page Screenshot](./assets/images/startLearningScreenshot.png?raw=true) 
-    ```
+ 
+ ![About Page Screenshot](./assets/images/aboutScreenshot.png)
+   
+   
+![Start Learning Page Screenshot](./assets/images/startLearningScreenshot.png)
 
 
 ## Credits
