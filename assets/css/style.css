@@ -110,8 +110,34 @@
   font-family: cursive;
   font-weight: bold;
   font-size: xx-large;
-  /* justify-content: space-between; */
+  /* justify-content: center; */
+  align-content: center;
   padding: 0px 25px;
+  border: 0.5px solid var(--blue);
+  border-radius: 1em;
+  box-shadow: 4px 4px var(--blue);
+}
+
+#about,
+#resources {
+  text-align: center;
+}
+
+/* .navbar-link {
+  background-color: var(--yellow);
+  border: 0.5px solid var(--blue);
+  border-radius: 1em;
+} */
+
+.navbar-dropdown {
+  background-color: var(--yellow);
+  border: 0.5px solid var(--blue);
+  border-radius: 1em;
+}
+
+#levelOne,
+#levelTwo {
+  color: var(--orange);
   border: 0.5px solid var(--blue);
   border-radius: 1em;
   box-shadow: 4px 4px var(--blue);
