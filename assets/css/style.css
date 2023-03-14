@@ -128,7 +128,7 @@
 }
 
 #content-4, #content-5 {
-  border: 10px dashed rgb(255, 145, 0);
+  border: 10px double rgb(255, 145, 0);
   font-size: 100px;
   font-family: cursive;
   background-color: rgb(0, 217, 255);
@@ -137,7 +137,9 @@
 }
 
 #aboutMessage, #resourceMessage {
-  font-size: 2rem;
+  font-size: x-large;
+  box-sizing: inherit;
+
 }
 
 #footer {
