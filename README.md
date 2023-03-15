@@ -2,14 +2,7 @@
 
 ## Description
 
-A one-stop shop for literacy education. Literacy Lane is a simple learning site for anyone learning English. You will have access to resources guiding you through reading strategies and interactive learning with the ability to generate words with content. Click "Start Learning" to go down Literacy Lane and begin your education today! 
-
-WHY & HOW?
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Our motivation was to create a “one stop shop” for users to overcome any kind of struggles with literacy or pronunciation. Literacy Lane is a simple learning site for anyone learning English. You will have access to resources guiding you through reading strategies and interactive learning with the ability to generate words with content. Click "Start Learning" to go down Literacy Lane and begin your education today! We built this project initially because our group member Jasmina is a teacher and has noticed the need for more outlets for reading comprehension and pronunciation practice. We are aiming to amend this decline in literacy education(especially after the Pandemic) which is supported by official studies like the Hechinger Study. Through various initial difficulties, we were able to merge github branches without issue at the end of this project. We also practiced various techniques such as using local storage, calling APIs, html mapping, and css frameworking. Additionally, we worked with the CSS Framework Bulma, and Javascript modals. 
 
 ## Table of Contents (Optional)
 
@@ -18,32 +11,26 @@ WHY & HOW?
 - [Credits](#credits)
 - [License](#license)
 
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+To use the program, open the page on the browser then you can read our about and resources sections, or click start learning to begin the actual excercises!
+ 
+ ![About Page Screenshot](./assets/images/aboutScreenshot.png)
+   
+   
+![Start Learning Page Screenshot](./assets/images/startLearningScreenshot.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
-Emmanuel Lakis (https://github.com/pexApred)
-Jasmina  (https://github.com/shecodes1222)
-Evan Gils (https://github.com/E-P-Gils)
-Deion Ponsones (https://github.com/dponsones)
-
-Benicio Lopez: Tutor assistance
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+-Emmanuel Lakis (https://github.com/pexApred)  
+-Jasmina Otero (https://github.com/shecodes1222)  
+-Evan Paul Gilmore (https://github.com/E-P-Gils)  
+-Deion Ponsones (https://github.com/dponsones)  
+-Benicio Lopez: Tutor assistance  
+-Sachin Jhaveri: Tutor assistance  
+-Bulma Framework(Jeremy Thomas): https://bulma.io/  
+-jQuery Library(John Resig): https://jquery.com/  
 
 ## License
 
@@ -59,4 +46,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Features
 
-If your project has a lot of features, list them here.
+-Video Modal  
+-Dictionary Search Feature  
+-Random Word Generation Feature  
+-Phoenetics Generation for Searched and Random Words  
+-Working gifs on the page  
