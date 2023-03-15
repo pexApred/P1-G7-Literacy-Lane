@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: var(--yellow);
+  
 }
 
 .navbar-item {
@@ -101,6 +102,7 @@
   width: 100%;
   border: 10px rgb(235, 253, 18);
   border-style:double;
+  box-sizing: inherit;
  
 }
 
