@@ -136,11 +136,14 @@
   background-color: rgb(0, 217, 255);
   text-align: center;
   margin:100px;
+  box-sizing: inherit;
 }
 
 #aboutMessage, #resourceMessage {
   font-size: x-large;
   box-sizing: inherit;
+  background-color: white;
+ 
 
 }
 
