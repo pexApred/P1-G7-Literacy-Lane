@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="mb">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,21 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Literacy Lane | Road to literacy</title>
+  <title>Literacy Lane | Road to Literacy</title>
 </head>
 
-<body>
-<!--Header and Navbar-->
-  <header id="navbarParent">
-    <a href="./index.html"><img id="logo" src="./assets/images/literacylanelogo.jpg" width="250" height="165"></a>
-
+<body id="learnPage">
+  <!--Header and Navbar-->
+  <!-- <header id="navbarParent">
+    <a href="./index.html"><img id="logo" src="./assets/images/literacylanelogo.jpg" ></a>
     <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a href="./index.html#content-4" id="about" class="navbar-item">About</a>
             <a href="./index.html#resourceMessage" id="resources" class="navbar-item">Resources</a>
-
             <div class="navbar-item has-dropdown is-hoverable">
               <a id="startLearn" class="navbar-item">Start Learning</a>
               <div class="navbar-dropdown">
@@ -35,34 +33,48 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header> -->
 
-  <!--Deion -->
-  <!-- Nested Columns to format -->
-  <div class="columns">
-    <div class="column">
-      <div class="column">
-        <div class="column">
-          <div class="column">
+  <nav class="navbar" id="navbarParent" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a id="logo" class="navbar-logo" href="./index.html">
+        <img src="./assets/images/literacylanelogo.jpg">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasic" is-active>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasic" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="./index.html" class="navbar-item">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link navbar-item" id="dropdown-trigger">
+            Continue Learning
+          </a>
+          <div class="navbar-dropdown" id="dropdown-menu" role="menu">
+            <a id="levelOne" class="navbar-item" href="start-learning.html">Level 1: Word Comprehension</a>
+            <hr class="navbar-divider">
+            <a id="levelTwo" class="navbar-item">Level 2: Under Construction</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 
   <!-- Body -->
   <main class="columns is-mobile is-centered" id="start-learning-main">
     <section class="column is-vcentered">
       <h2 class="title is-5">Type in a word or use the random word search to get information about that word.</h2>
-
       <form id="new-word-search" class="column is-8">
         <input class="column is-6" type="text" id="new-word" placeholder="Ex: Literacy" />
         <div class="column"></div>
         <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search" />
         <input class="button is-hoverable" type="button" id="random-word-search-button" value="Random Word Search" />
-
       </form>
-
       <div id="spinner">
         <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" style=display:none width="100" height="100"
           frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -73,7 +85,6 @@
 
     <div class="column">
       <div id="generated-word" class="box">
-
       </div>
       <div class="box">
         <h3 class="title is-5">Search History</h3>
@@ -84,17 +95,17 @@
     </div>
   </main>
 
-  
- <!-- Footer -->
- <footer>
-  <div id="startLearningfooter" class="footer-text-container">
-    <p>
-      &copy; 2023 Literacy Lane, Inc.
-    </p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <div id="footer" class="footer-text-container">
+      <img src="./assets/images/literacylanelogo.jpg" class="footer-img">
+      <p class="footer-text">
+        &copy; 2023
+      </p>
+    </div>
+  </footer>
 
-<!-- <button id="generate-sentence-button">Generate Sentence</button> -->
+  <!-- <button id="generate-sentence-button">Generate Sentence</button> -->
   <!-- <div id="generated-sentence"></div> -->
 
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>

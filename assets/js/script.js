@@ -2,11 +2,9 @@
 function closeModal(modal) {
     modal.classList.remove('is-active');
   }
- 
   window.addEventListener('load', function() {
     var modal = document.querySelector('.modal');
     modal.classList.add('is-active');
- 
     (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
       const $target = $close.closest('.modal');
       $close.addEventListener('click', () => {
@@ -14,7 +12,47 @@ function closeModal(modal) {
       });
     });
   });
- 
+
+// Burger Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target); 
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+    
+  });
+
+// Dropdown Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownTrigger = document.getElementById('dropdown-trigger');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    dropdownTrigger.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        event.stopPropagation(); // Stop event propagation
+        dropdownMenu.classList.toggle('is-active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!dropdownTrigger.contains(event.target) && !event.target.closest('.navbar-dropdown')) {
+            dropdownMenu.classList.remove('is-active');
+        }
+    });
+});
+
 // Spinner variable defined using jQuery to select element with class
 const spinner = $(".giphy-embed");
 
@@ -63,9 +101,7 @@ const addWords = function() {
                 var audioEl = document.createElement("audio");
                 audioEl.src = phoneticAudio;
                 audioEl.controls = true;
-
-                $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");
-                 
+                $("#generated-word").html("<h2>" + word + "</h2><p>Phonetics: " + phoneticText + "</p><p>Part of Speech: " + partOfSpeech + "</p><p>Definition: " + definition + "<p>");               
                 // // LS EDIT
                 searchHistory.unshift(word);
                 searchHistory = searchHistory.slice(0, 10);
@@ -135,7 +171,8 @@ const addRandomWords = function() {
                     } else {
                         // If response not successful, re-generate a word
                         addRandomWords();
-                    }return response.json();
+                    } 
+                    return response.json();
                 })
                 .catch(function(error){
                     console.error('Error:', error);
