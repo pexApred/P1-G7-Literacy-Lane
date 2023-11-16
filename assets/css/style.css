@@ -6,6 +6,11 @@
   --orange:  rgb(255, 145, 0);
 }
 
+html, #learnPage {
+  height: 100%;
+  margin: 0;
+}
+
 .content-wrapper {
   min-height: calc(100vh - 100px);;
 }
