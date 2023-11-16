@@ -12,7 +12,8 @@ html, #learnPage {
 }
 
 .content-wrapper {
-  min-height: calc(100vh - 100px);;
+  min-height: calc(100vh - 100px);
+  background-color:var(--blue);
 }
 
 #homepage {
