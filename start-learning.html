@@ -34,67 +34,67 @@
       </div>
     </nav>
   </header> -->
-
-  <nav class="navbar" id="navbarParent" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a id="logo" class="navbar-logo" href="./index.html">
-        <img src="./assets/images/literacylanelogo.jpg">
-      </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasic" is-active>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div id="navbarBasic" class="navbar-menu">
-      <div class="navbar-start">
-        <a href="./index.html" class="navbar-item">
-          Home
+  <div class="content-wrapper">
+    <nav class="navbar" id="navbarParent" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a id="logo" class="navbar-logo" href="./index.html">
+          <img src="./assets/images/literacylanelogo.jpg">
         </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link navbar-item" id="dropdown-trigger">
-            Continue Learning
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasic"
+          is-active>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasic" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="./index.html" class="navbar-item">
+            Home
           </a>
-          <div class="navbar-dropdown" id="dropdown-menu" role="menu">
-            <a id="levelOne" class="navbar-item" href="start-learning.html">Level 1: Word Comprehension</a>
-            <hr class="navbar-divider">
-            <a id="levelTwo" class="navbar-item">Level 2: Under Construction</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link navbar-item" id="dropdown-trigger">
+              Continue Learning
+            </a>
+            <div class="navbar-dropdown" id="dropdown-menu" role="menu">
+              <a id="levelOne" class="navbar-item" href="start-learning.html">Level 1: Word Comprehension</a>
+              <hr class="navbar-divider">
+              <a id="levelTwo" class="navbar-item">Level 2: Under Construction</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Body -->
-  <main class="columns is-mobile is-centered" id="start-learning-main">
-    <section class="column is-vcentered">
-      <h2 class="title is-5">Type in a word or use the random word search to get information about that word.</h2>
-      <form id="new-word-search" class="column is-8">
-        <input class="column is-6" type="text" id="new-word" placeholder="Ex: Literacy" />
-        <div class="column"></div>
-        <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search" />
-        <input class="button is-hoverable" type="button" id="random-word-search-button" value="Random Word Search" />
-      </form>
-      <div id="spinner">
-        <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" style=display:none width="100" height="100"
-          frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        <p><a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40" alt="Loading spinner icon"></a></p>
+    <!-- Body -->
+    <main class="columns is-mobile is-centered" id="start-learning-main">
+      <section class="column is-vcentered">
+        <h2 class="title is-5">Type in a word or use the random word search to get information about that word.</h2>
+        <form id="new-word-search" class="column is-8">
+          <input class="column is-6" type="text" id="new-word" placeholder="Ex: Literacy" />
+          <div class="column"></div>
+          <input class="button is-hoverable" type="button" id="new-word-search-button" value="Search" />
+          <input class="button is-hoverable" type="button" id="random-word-search-button" value="Random Word Search" />
+        </form>
+        <div id="spinner">
+          <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" style=display:none width="100" height="100"
+            frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          <p><a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40" alt="Loading spinner icon"></a></p>
+        </div>
+      </section>
+
+      <div class="column">
+        <div id="generated-word" class="box">
+        </div>
+        <div class="box">
+          <h3 class="title is-5">Search History</h3>
+          <ul id="search-history"></ul>
+          <div id="genWordsLocal"></div>
+          <div id="ranWordsLocal"></div>
+        </div>
       </div>
-    </section>
-
-
-    <div class="column">
-      <div id="generated-word" class="box">
-      </div>
-      <div class="box">
-        <h3 class="title is-5">Search History</h3>
-        <ul id="search-history"></ul>
-        <div id="genWordsLocal"></div>
-        <div id="ranWordsLocal"></div>
-      </div>
-    </div>
-  </main>
-
+    </main>
+  </div>
   <!-- Footer -->
   <footer>
     <div id="footer" class="footer-text-container">

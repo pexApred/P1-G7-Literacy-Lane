@@ -6,6 +6,10 @@
   --orange:  rgb(255, 145, 0);
 }
 
+.content-wrapper {
+  min-height: calc(100vh - 100px);;
+}
+
 #homepage {
   background-color:var(--blue);
   padding-top: 120px;
@@ -140,12 +144,10 @@
   background-color: var(--yellow);
   text-align: center;
 }
-
 .footer-img{
   height: 80px;
   margin-bottom: 0;
 }
-
 .footer-text{
   font-size: 16px;
   font-weight: bold;
@@ -176,7 +178,6 @@
   background-color:var(--blue);
   padding-top: 120px;
 }
-
 #start-learning-main {
   margin: 5%;
   display: flex;
@@ -195,13 +196,11 @@
   .card {
     margin: 0 0.5%;
   }
-
   #catGif {
     display: block;
     margin: 0 auto;
     margin-bottom: 2%;
   }
-
   #content-4 {
     margin-left: 10em;
     margin-right: 10em;    
@@ -242,7 +241,6 @@
     right: 0;
     top: 100%;
   }
-
 }
 
 @media screen and (min-device-width: 768px) {
@@ -251,17 +249,14 @@
     justify-content: right;
     width: 100%;
   }
-
   .card {
     margin: 0 0.5%;
   }
-
   #catGif {
     display: block;
     margin: 0 auto;
     margin-bottom: 2%;
   }
-
   .navbar-menu, 
   .has-dropdown:hover,  
   #dropdown-trigger:hover {
